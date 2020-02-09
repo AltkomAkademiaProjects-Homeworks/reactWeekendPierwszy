@@ -26,6 +26,14 @@ export default class Data extends React.Component {
             alert("You did not specify your sex!");
         }
 
+        if (name.length < 3 || surname.length < 3) {
+            alert("Your name or surname is too short!")
+        }
+
+        if (!name.charAt(0).match(/^[A-Z]*$/) || !surname.charAt(0).match(/^[A-Z]*$/)) {
+            alert("Your name and surname must start with capital letter!")
+        }
+
 
     }
     myChangeHandler = (event) => {
@@ -37,7 +45,6 @@ export default class Data extends React.Component {
     render() {
         return (
             <form onSubmit={this.mySubmitHandler}>
-                <h1>Hello {this.state.name}</h1>
                 <p>Enter your name:</p>
                 <input
                     type='text'

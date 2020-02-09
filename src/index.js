@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Data from "./ex1";
+import Parent from "./ex3";
 
-ReactDOM.render(<Data />, document.getElementById('root'));
+ReactDOM.render(<Parent />, document.getElementById('root'));
