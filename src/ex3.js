@@ -5,24 +5,17 @@ export default class Parent extends React.Component {
         super(props);
         this.state = {
             val1: null,
-            val2: null
+            val2: null 
         }
-
-        mySubmitHandler = (event) => {
-            event.preventDefault();
-            let val1 = this.state.val1;
-            let val2 = this.state.val2;
-            let sum = val1 + val2;
-            alert("The sum of a numbers is: "[sum])
-        }
-
-        return (
-            <Calc properFunction={this.mySubmitHandler}/>
-        )
     }
-}
 
-class Calc extends React.Component {
+    mySubmitHandler = (event) => {
+        event.preventDefault();
+        let actVal1 = this.state.val1;
+        let actVal2 = this.state.val2;
+        let sum = parseInt(actVal1) + parseInt(actVal2);
+        alert("The sum of a numbers is: " + sum)
+    }
 
     myChangeHandler = (event) => {
         let key = event.target.name;
@@ -30,30 +23,35 @@ class Calc extends React.Component {
         this.setState({[key]: val});
     }
 
-    mySubmitHandler = (event) => {
-        event.preventDefault();
-        let val1 = this.state.val1;
-        let val2 = this.state.val2;
-        let sum = val1 + val2;
-        alert("The sum of a numbers is: "[sum])
+    render() {
+        return (
+            <Calc properFunction={this.mySubmitHandler} propFunction={this.myChangeHandler}/>
+        )
     }
+
+
+}
+
+ class Calc extends React.Component {
+
+    
 
 
     render() {
         return (
 
-            <form onSubmit={this.mySubmitHandler}>
+            <form onSubmit={this.props.properFunction}>
                 <p>Enter first number:</p>
                 <input
                     type='text'
                     name='val1'
-                    onChange={this.myChangeHandler}
+                    onChange={this.props.propFunction}
                 />
                 <p>Enter second number:</p>
                 <input
                     type='text'
                     name='val2'
-                    onChange={this.myChangeHandler}
+                    onChange={this.props.propFunction}
                 />
                 <br/>
                 <br/>
