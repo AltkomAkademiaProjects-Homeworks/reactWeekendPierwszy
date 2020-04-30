@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Parent from "./ex3";
+import Rout from './ex5';
 
-ReactDOM.render(<Parent />, document.getElementById('root'));
+ReactDOM.render(<Rout />, document.getElementById('root'));

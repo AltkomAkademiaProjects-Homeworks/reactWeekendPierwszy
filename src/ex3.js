@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Parent extends React.Component {
+export default class ParentEx3 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -60,31 +60,4 @@ export default class Parent extends React.Component {
         )
     }
 }
-
-/*
-export default class Parent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            number = 0
-        };
-    }
-
-    showPrompt = () => {
-        var value = prompt("Podaj liczbę");
-        let tempVal = this.state.number + parseInt(value);
-        this.setState({number: tempVal})
-    }
-
-    render() {
-        return (
-            <div>
-                <button onClick={this.this.showPrompt}>Wprowadz liczbę</button>
-                <p>Wynik: {this.state.number}</p>
-            </div>
-        )
-    }
-}
-*/
-
 
